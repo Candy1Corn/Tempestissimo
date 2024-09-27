@@ -1,0 +1,60 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>坦派斯特國家圖書館</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <style type="text/css"></style>
+        <body background = "轉生史萊姆 ED.png">
+        <form action="" class="login">
+            <img src="史萊姆標題.png" width="405" height="174"> 
+            <div style="text-align:center;"><h2>坦派斯特國家圖書館</h2></div>
+            <div style="text-align:center;"><h3><br>Library</h3></div><hr>
+
+            <div style="text-align:center;"><input type="button" id="BorrowBook" style="height:35px;width:90px" value="借書" onclick="Operattt('BorrowBookmessage')"><br></div>
+            <div style="text-align: center;"><p id="BorrowBookmessage"></p></div>
+            <h4></h4>
+            <div style="text-align:center;"><input type="button" id="GiveBackBook" style="height:35px;width:90px" value="還書" onclick="Operattt('GiveBackBookmessage')"><br></div>
+            <div style="text-align: center;"><p id="GiveBackBookmessage"></p></div>
+            <h4></h4>
+            <div style="text-align:center;"><input type="button" id="NewBook" style="height:35px;width:90px" value="新書紀錄" onclick="Operattt('NewBookmessage')"><br></div>
+            <div style="text-align: center;"><p id="NewBookmessage"></p></div>
+            <h4></h4>
+            <div style="text-align:center;"><input type="button" id="LosingBook" style="height:35px;width:90px" value="遺失書籍" onclick="Operattt('LosingBookmessage')"><br></div>
+            <div style="text-align: center;"><p id="LosingBookmessage"></p></div>
+            <h4></h4>
+            <div style="text-align:center;"><hr><br>想登出？<br></hr></div>
+            <div style="text-align:center;"><input type="button" id="LogoutButton" style="height:30px;width:50px" value="登出" onclick="logout()"><br></div>
+            <br><hr>
+        </form> 
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsftp/1.0.0/jsftp.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script type="text/javascript">
+            
+            function Operattt(MessageID) {
+                var messageElement = document.getElementById(MessageID);
+                messageElement.textContent = "關於我轉生成異世界爆肝工程師！";
+                messageElement.style.color = "blue";
+            }
+
+            function logout(){
+                window.location.href = "login.html";
+            }
+
+            function boxChoice(choice, rId, button) {
+                var buttons = document.getElementsByName(button.name);
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].style.borderColor = "red";
+                }
+                button.style.borderColor = "green";
+            }
+
+        </script>
+
+    </body>
+
+</html>

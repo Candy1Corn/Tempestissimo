@@ -1,0 +1,69 @@
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>坦派斯特國家圖書館</title>
+        <link rel="stylesheet" href="style.css">    
+    </head>
+
+    <body>
+        <style type="text/css"></style>
+        <body background = "轉生史萊姆 ED.png">
+        <form action="" class="login">
+            <img src="史萊姆標題.png" width="405" height="174"> 
+            <div style="text-align:center;"><h2>朱拉大森林註冊系統</h2></div>
+            <div style="text-align:center;"><h3><br>signin</h3></div><hr>
+
+            <p><div style="text-align: center;"> 請填入帳號或電子郵件（必填）</div></p>
+            <div style="text-align:center;"><input type="text" id="InputUserID" name="userID" style="height:30px;width:250px;" placeholder="  mail" onclick="boxChoice(1, 'un', this)"></div>
+            <h4></h4>
+            <p><div style="text-align: center;"> 請輸入密碼（必填）</div></p>
+            <div style="text-align:center;"><input type="password" id="InputUserPWS1" name="userPWS1" style="height:30px;width:250px;" placeholder=" passworld" onclick="boxChoice(2, 'un', this)"></div>
+            <h4></h4>
+            <p><div style="text-align: center;"> 請確認密碼（必填）</div></p>
+            <div style="text-align:center;"><input type="password" id="InputUserPWS2" name="userPWS2" style="height:30px;width:250px;" placeholder=" passworld" onclick="boxChoice(3, 'un', this)"></div>
+            <h4></h4>
+            <div style="text-align:center;"><input type="button" id="SigninButton" style="height:35px;width:90px" value="註冊" onclick="signin()"><br></div>
+            <div style="text-align: center;"><p id="message"></p></div>
+            <h4></h4>
+            <div style="text-align:center;"><hr><br>已經有帳號了嗎？<br></hr></div>
+            <div style="text-align:center;"><input type="button" id="LoginBytton" style="height:30px;width:50px" value="登錄" onclick="login()"><br></div>
+            <br><hr>
+        </form>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsftp/1.0.0/jsftp.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script type="text/javascript">
+            
+            function signin() {
+                var InputPWS1 = document.getElementById("InputUserPWS1").value;
+                var InputPWS2 = document.getElementById("InputUserPWS2").value;
+                var messageElement = document.getElementById("message");
+                if (InputPWS1 === InputPWS2) {
+                    messageElement.textContent = "註冊成功！請再次登入";
+                    messageElement.style.color = "blue";
+                    window.location.href = "login.html";
+                } else {
+                    messageElement.textContent = "兩次密碼不同";
+                    messageElement.style.color = "red";
+                }
+                
+            }
+
+            function login() {
+                window.location.href = "login.html";
+            }
+
+            function boxChoice(choice, rId, button) {
+                var buttons = document.getElementsByName(button.name);
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].style.borderColor = "red";
+                }
+                button.style.borderColor = "green";
+            }
+
+        </script>
+
+    </body>
+
+</html>
